@@ -17,7 +17,10 @@ class DrugBank:
         self.page = get_page(url)
 
     def next_node(self, sel):
-        return self.page.select_one(sel).find_next_sibling()
+        node = self.page.select_one(sel)
+        if node:
+            return node.find_next_sibling()
+        return ""
 
     def post_proc_description(self, desc):
         for sup in desc.find_all("sup"):
@@ -27,11 +30,16 @@ class DrugBank:
     def _get_ingredients(self):
         sel1, sel2 = SELECTORS["ingredients"]
         table = self.page.select_one(sel1)
-        return [item.text.strip() for item in table.select(sel2)]
+        if table:
+            return [item.text.strip() for item in table.select(sel2)]
+        return []
 
     def _get_dosage_forms(self):
-        rows = self.page.select_one("#dosages").find_all("tr")[1:]
-        return list(set([row.find("td").text for row in rows]))
+        dosage_table = self.page.select_one("#dosages")
+        if dosage_table:
+            rows = dosage_table.find_all("tr")[1:]
+            return list(set([row.find("td").text for row in rows]))
+        return []
 
     def fetch(self):
         return {
@@ -45,18 +53,24 @@ class DrugBank:
 
     @property
     def name_(self):
-        _name = self.page.select_one(SELECTORS["name"])
-        return _name.text.strip()
+        node = self.page.select_one(SELECTORS["name"])
+        if node:
+            return node.text.strip()
+        return ""
 
     @property
     def type_(self):
-        return self.next_node(SELECTORS["type"]).text.strip()
+        node = self.next_node(SELECTORS["type"])
+        if node:
+            return node.text.strip()
+        return ""
 
     @property
     def description_(self):
-        # return self.next_node(SELECTORS["description"]).text.strip()
         desc_node = self.next_node(SELECTORS["description"])
-        return self.post_proc_description(desc_node)
+        if desc_node:
+            return self.post_proc_description(desc_node)
+        return ""
 
     @property
     def ingredients_(self):
