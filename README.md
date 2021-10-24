@@ -2,10 +2,10 @@
 
 Scraping the internet for extracting healthcare and pharma data.
 
-- [x] [Drug Bank](https://go.drugbank.com/drugs/DB00295)
-- [ ] [clinicaltrials.gov](https://clinicaltrials.gov)
-- [ ] [twitter #remdesivir](https://twitter.com/search?q=remdesivir&src=typeahead_click&f=live)
-- [ ] [Smpc-PIL pair extraction](#)
+- [x] Drug Bank
+- [ ] clinicaltrials.gov
+- [ ] twitter #remdesivir
+- [ ] Smpc-PIL pair extraction
 
 ## Drug Bank
 
