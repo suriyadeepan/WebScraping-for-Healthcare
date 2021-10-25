@@ -8,5 +8,7 @@ HEADERS = {
 
 def get_page(url):
     response = requests.get(url, headers=HEADERS)
+    if response.status_code == 404:
+        return 404
     page = BeautifulSoup(response.content, "html.parser")
     return page
