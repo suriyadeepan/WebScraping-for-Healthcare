@@ -51,3 +51,13 @@ def test_drugbank_fetch():
     items = drugbank.fetch(url)
     assert len(items) > 0
     print(items)
+
+
+def test_clinicaltrials_fetch():
+    from phscrape import clinicaltrials
+
+    url = "https://clinicaltrials.gov/ct2/show/NCT04452669?recrs=e&cond=covid19&draw=2"
+    items = clinicaltrials.fetch(url)
+    assert len(items) > 0
+    assert items['nct'] == "NCT04452669"
+    print(items)
