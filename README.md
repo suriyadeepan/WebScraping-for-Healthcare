@@ -79,3 +79,11 @@ resp = requests.get(
 data = json.loads(resp.content)
 df = pd.DataFrame(data)
 ```
+
+## EMC - Electronic Medicines Compendium
+
+```python
+from phscrape import emc
+
+df = emc.crawl_k(20)
+```
