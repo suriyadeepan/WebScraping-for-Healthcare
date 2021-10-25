@@ -4,6 +4,7 @@ Scraping the internet for extracting healthcare and pharma data.
 
 - [x] Drug Bank
 - [x] clinicaltrials.gov
+- [x] COVID19 API [https://covid19api.com/](https://covid19api.com/)
 - [ ] twitter #remdesivir
 - [ ] Smpc-PIL pair extraction
 
