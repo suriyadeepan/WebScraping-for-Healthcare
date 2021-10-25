@@ -4,7 +4,7 @@ Scraping the internet for extracting healthcare and pharma data.
 
 - [x] Drug Bank
 - [x] clinicaltrials.gov
-- [x] COVID19 API [https://covid19api.com/](https://covid19api.com/)
+- [x] COVID19 API [4.0-sr-covid19_api.ipynb](https://github.com/suriyadeepan/WebScraping-for-Healthcare/blob/main/notebooks/4.0-sr-covid19_api.ipynb)
 - [ ] twitter #remdesivir
 - [ ] Smpc-PIL pair extraction
 
@@ -59,3 +59,20 @@ print(data)
   'Patient on judicial protection'],
  'enrollment': '300 participants'}
  ```
+
+## COVID19 API
+
+```python
+import requests
+import pandas as pd
+import json
+
+_from = "2021-01-01T00:00:00Z"
+_to = "2021-10-20T00:00:00Z"
+country = 'India'.lower()
+resp = requests.get(
+    f'https://api.covid19api.com/country/{country}/status/confirmed?from={_from}&to={_to}'
+)
+data = json.loads(resp.content)
+df = pd.DataFrame(data)
+```
