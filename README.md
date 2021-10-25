@@ -8,7 +8,7 @@ Scraping the internet for extracting healthcare and pharma data.
 - [ ] twitter #remdesivir
 - [ ] Smpc-PIL pair extraction
   - [x] EMC
-  - [ ] HPRA
+  - [x] HPRA
   - [ ] MHRA
 
 ## Drug Bank
@@ -95,3 +95,22 @@ df = emc.crawl_k(5)
 |  2 | https://www.medicines.org.uk/emc/product/12475/smpc | https://www.medicines.org.uk/emc/product/12475/pil | Abacavir 300mg Film-coated tablets                                        | Aurobindo Pharma - Milpharm Ltd.                  | data/emc/smpc/12475.html | https://www.medicines.org.uk/emc/files/pil.12475.pdf | 12475 |
 |  3 | https://www.medicines.org.uk/emc/product/9079/smpc  | https://www.medicines.org.uk/emc/product/9079/pil  | Abacavir Mylan 300 mg Film-coated Tablets                                 | Mylan                                             | data/emc/smpc/9079.html  | https://www.medicines.org.uk/emc/files/pil.9079.pdf  |  9079 |
 |  4 | https://www.medicines.org.uk/emc/product/7375/smpc  | https://www.medicines.org.uk/emc/product/7375/pil  | Abacavir/Lamivudine 600 mg/300 mg film-coated tablets                     | Lupin Healthcare (UK) Ltd                         | data/emc/smpc/7375.html  | https://www.medicines.org.uk/emc/files/pil.7375.pdf  |  7375 |
+
+
+## HPRA - Health Products Regulatory Authority
+
+```python
+from phscrape import hpra
+
+df = hpra.crawl_k(5)
+df
+```
+
+
+|    | Name                                                                                          | SPC                                                                                        | PIL                                                                                                                                                     |
+|---:|:----------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------------|
+|  0 | 0.18 % w/v Sodium Chloride and 4 % w/v Glucose Intravenous Infusion BP, Solution for Infusion | https://www.hpra.ie/img/uploaded/swedocuments/Licence_PA0179-003-006_10092019132631.pdf    | https://www.hpra.ie/img/uploaded/swedocuments/2201112.PA0179_003_006.3301dac4-a0ce-4656-935d-394237130d47.000001Product%20Leaflet%20Approved.180206.pdf |
+|  1 | 0.18%w/v Sodium Chloride and 4.0% w/v Glucose Intravenous Infusion BP, (Viaflo Container)     | https://www.hpra.ie/img/uploaded/swedocuments/Licence_PA2299-008-005_24092020152132.pdf    | https://www.hpra.ie/img/uploaded/swedocuments/974b101b-bc8d-4cdc-baa3-4b3542835ba3.pdf                                                                  |
+|  2 | 0.9 % w/v Sodium Chloride Injection BP                                                        | https://www.hpra.ie/img/uploaded/swedocuments/Licence_PA0179-002-013_25022020122300.pdf    | https://www.hpra.ie/img/uploaded/swedocuments/0dade6ce-2f83-4985-996e-ccc05506e2be.pdf                                                                  |
+|  3 | 0.9% Sodium Chloride Intravenous Infusion Solution                                            | https://www.hpra.ie/img/uploaded/swedocuments/Licence_PA22859-001-001_02062020081054.pdf   | https://www.hpra.ie/img/uploaded/swedocuments/659e659f-1764-4e84-abdb-5dc62116cc29.pdf                                                                  |
+|  4 | 1% w/v Lidocaine Hydrochloride Injection BP                                                   | https://www.hpra.ie/img/uploaded/swedocuments/Licence_PA0179-037-001_14112019130102.pdf    | https://www.hpra.ie/img/uploaded/swedocuments/2159164.PA0179_037_001.72651cf5-3519-41bb-a479-6ccde7d81930.000001pil1percent.150427.pdf
