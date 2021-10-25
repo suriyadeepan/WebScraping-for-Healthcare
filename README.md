@@ -3,7 +3,7 @@
 Scraping the internet for extracting healthcare and pharma data.
 
 - [x] Drug Bank
-- [ ] clinicaltrials.gov
+- [x] clinicaltrials.gov
 - [ ] twitter #remdesivir
 - [ ] Smpc-PIL pair extraction
 
@@ -29,3 +29,32 @@ print(data)
 'Granule, delayed release', 'Powder', 'Capsule, extended release', 'Syrup', 'Tablet, film coated',
 'Injection', 'Solution / drops', 'Injection, solution, concentrate']}
 ```
+
+## Clinical Trials
+
+```python
+from phscrape import clinicaltrials
+
+dexamethasone_study = 'https://clinicaltrials.gov/ct2/show/NCT04707534?cond=covid19&draw=2&rank=1'
+data = clinicaltrials.fetch(dexamethasone_study)
+print(data)
+```
+
+```console
+{'status': 'Recruiting',
+ 'phase': 'Phase 4',
+ 'age': '18 Years and older \xa0 (Adult, Older Adult)',
+ 'sex': 'All',
+ 'nct': 'NCT04707534',
+ 'inclusion': ['Age ≥ 18 years old',
+  'RT-PCR confirmed COVID-19 infection',
+  'Positive pressure ventilation (non-invasive or invasive) or high flow nasal cannula (HFNC) or need supplemental oxygen with oxygen mask or nasal cannula'],
+ 'exclusion': ['Underlying disease requiring chronic corticosteroids',
+  'Severe adverse events before admission, i.e. cardiac arrest;',
+  'Contraindication for corticosteroids;',
+  'Death is deemed to be imminent and inevitable during the next 24 hours',
+  'Recruited in other clinical intervention trial',
+  'Pregnancy',
+  'Patient on judicial protection'],
+ 'enrollment': '300 participants'}
+ ```
