@@ -5,7 +5,7 @@ Scraping the internet for extracting healthcare and pharma data.
 - [x] Drug Bank
 - [x] clinicaltrials.gov
 - [x] COVID19 API [4.0-sr-covid19_api.ipynb](https://github.com/suriyadeepan/WebScraping-for-Healthcare/blob/main/notebooks/4.0-sr-covid19_api.ipynb)
-- [ ] twitter #remdesivir
+- [x] twitter #remdesivir
 - [ ] Smpc-PIL pair extraction
   - [x] EMC
   - [x] HPRA
@@ -21,7 +21,7 @@ data = drugbank.fetch(url)
 print(data)
 ```
 
-```console
+```output
 {'name': 'Morphine', 'type': 'Small Molecule', 
 'description': 'Morphine, the main alkaloid of opium, was first obtained from poppy seeds in 1805. It is a potent analgesic, though its use is limited due to tolerance, withdrawal, and the risk of abuse. Morphine is still routinely used today, though there are a number of semi-synthetic opioids of varying strength such as codeine, fentanyl, methadone, hydrocodone, hydromorphone, meperidine, and oxycodone.\nMorphine was granted FDA approval in 1941.', 
 'ingredients': ['Morphine acetate', 'Morphine hydrochloride', 'Morphine hydrochloride trihydrate', 'Morphine mesylate', 'Morphine nitrate', 'Morphine phosphate', 'Morphine sulfate', 'Morphine sulfate pentahydrate', 'Morphine tartrate'], 
@@ -44,7 +44,7 @@ data = clinicaltrials.fetch(dexamethasone_study)
 print(data)
 ```
 
-```console
+```output
 {'status': 'Recruiting',
  'phase': 'Phase 4',
  'age': '18 Years and older \xa0 (Adult, Older Adult)',
@@ -62,6 +62,24 @@ print(data)
   'Patient on judicial protection'],
  'enrollment': '300 participants'}
  ```
+ 
+## Twitter
+
+```console
+node twitter/tweets.js "remdesivir" 1000 500
+# [1] Search for tweets contanining the keyword "remdesivir"
+# [2] Stop at 1000 tweets
+# [3] Scroll down at 500 ms interval
+```
+
+```output
+[
+  "Raynaleh@raynalah·8mReplying to @apetruskI am so sorry.  I hope she changes her mind about Remdesivir. I can only imagine how frustrating this is for you, and how helpless you feel.",
+  "Alexander Petruska@apetrusk·12mIt is 23:15 MST and my wife is awaiting a room since approx 16:30 MST. She's on oxygen, her voice sounding stronger. Refuses Remdesivir from the hospital and instructed me not to allow the medication. Fluid situation. I shall continue to assess and play by ear for now.26",
+  "Fer Plaie@FPlaie·14mReplying to @cavousf5 and @GilbertDerayEn même temps :\n1 l ihu aphm a un des plus faible taux de mortalité du covid , bien moindre que l aphp (et il y a plus d étude en faveur de l hcq que contre).\n2 quand on a soutenu au delà du raisonnable le remdesivir , \net la #DictatureEnMarche on a pas de leçon a donné!",
+  ...
+]
+```
 
 ## COVID19 API
 
