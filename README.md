@@ -65,11 +65,12 @@ print(data)
  
 ## Twitter
 
-```console
+```bash
 node twitter/tweets.js "remdesivir" 1000 500
 # [1] Search for tweets contanining the keyword "remdesivir"
 # [2] Stop at 1000 tweets
 # [3] Scroll down at 500 ms interval
+cat data/tweets/remdesivir.1000.json
 ```
 
 ```output
