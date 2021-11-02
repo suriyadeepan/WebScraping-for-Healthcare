@@ -1,4 +1,4 @@
-# WebScraping for Healthcare
+# Web Scraping & Applications in Healthcare
 
 Scraping the internet for extracting healthcare and pharma data.
 
