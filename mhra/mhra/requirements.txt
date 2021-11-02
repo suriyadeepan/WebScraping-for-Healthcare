@@ -1,0 +1,3 @@
+beautifulsoup4
+Scrapy
+scrapy_playwright
