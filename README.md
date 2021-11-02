@@ -6,10 +6,10 @@ Scraping the internet for extracting healthcare and pharma data.
 - [x] clinicaltrials.gov
 - [x] COVID19 API [4.0-sr-covid19_api.ipynb](https://github.com/suriyadeepan/WebScraping-for-Healthcare/blob/main/notebooks/4.0-sr-covid19_api.ipynb)
 - [x] twitter #remdesivir
-- [ ] Smpc-PIL pair extraction
+- [x] Smpc-PIL pair extraction
   - [x] EMC
   - [x] HPRA
-  - [ ] MHRA
+  - [x] MHRA
 
 ## Drug Bank
 
